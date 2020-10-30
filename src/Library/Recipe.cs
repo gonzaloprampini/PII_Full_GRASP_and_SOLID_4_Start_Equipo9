@@ -14,7 +14,13 @@ namespace Full_GRASP_And_SOLID
         private IList<Step> steps = new List<Step>();
 
         public Product FinalProduct { get; set; }
+        /*
 
+            Usamos patrón Creator, ya que la clase Recipe contiene objetos de la clase Step, por lo que es razonable 
+            hacer que la misma clase Recipe sea la que creelas instancias de estas clases, siendo que Recipe tiene
+            como atributo una lista de objetos Step
+            
+        */
         public void AddStep(Product input, double quantity, Equipment equipment, int time)
         {
             Step step = new Step(input, quantity, equipment, time);
